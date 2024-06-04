@@ -114,7 +114,7 @@ pub fn set_times(
 fn to_timeval(ft: &FileTime) -> libc::timeval {
     libc::timeval {
         tv_sec: ft.seconds() as libc::time_t,
-        tv_usec: (ft.nanoseconds() / 1000) as libc::suseconds_t,
+        tv_usec: (ft.nanoseconds() / 1000) as _,
     }
 }
 
